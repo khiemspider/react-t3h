@@ -1,283 +1,61 @@
 import React, { Component } from "react";
 import Header from "../components/CrudAxoisExample/Header/Header";
 import "./CrudAxiosExample.css";
+import EntryItem from "../components/CrudAxoisExample/EntryItem/EntryItem";
 
 export default class CrudAxiosExample extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      listEntries: [
+        {
+          id: 1,
+          avatar:
+            "https://toppng.com/uploads/preview/beauty-center-png-beauty-center-logo-png-115560977852gkdo8akey.png",
+        },
+        {
+          id: 2,
+          avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        },
+        {
+          id: 3,
+          avatar:
+            "https://toppng.com/uploads/preview/beauty-center-png-beauty-center-logo-png-115560977852gkdo8akey.png",
+        },
+        {
+          id: 4,
+          avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        },
+        {
+          id: 5,
+          avatar:
+            "https://toppng.com/uploads/preview/beauty-center-png-beauty-center-logo-png-115560977852gkdo8akey.png",
+        },
+        {
+          id: 6,
+          avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        },
+      ],
+    };
+  }
+
+  handleClick = (item) => {
+    console.log("item", item);
+  };
   render() {
     return (
       <>
         <Header />
-        <main class="wrap_list" id="wrap_list">
-          <div className="card">
-            <img
-              src="https://i.stack.imgur.com/k59em.png"
-              alt=""
-              className="dots"
-            />
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h4>
-                <b>John Doe</b>
-              </h4>
-              <p>Architect &amp; Engineer</p>
-            </div>
-          </div>
-          <div className="card">
-            <img
-              src="https://i.stack.imgur.com/k59em.png"
-              alt=""
-              className="dots"
-            />
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h4>
-                <b>John Doe</b>
-              </h4>
-              <p>Architect &amp; Engineer</p>
-            </div>
-          </div>
-          <div className="card">
-            <img
-              src="https://i.stack.imgur.com/k59em.png"
-              alt=""
-              className="dots"
-            />
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h4>
-                <b>John Doe</b>
-              </h4>
-              <p>Architect &amp; Engineer</p>
-            </div>
-          </div>
-          <div className="card">
-            <img
-              src="https://i.stack.imgur.com/k59em.png"
-              alt=""
-              className="dots"
-            />
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h4>
-                <b>John Doe</b>
-              </h4>
-              <p>Architect &amp; Engineer</p>
-            </div>
-          </div>
-          <div className="card">
-            <img
-              src="https://i.stack.imgur.com/k59em.png"
-              alt=""
-              className="dots"
-            />
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h4>
-                <b>John Doe</b>
-              </h4>
-              <p>Architect &amp; Engineer</p>
-            </div>
-          </div>
-          <div className="card">
-            <img
-              src="https://i.stack.imgur.com/k59em.png"
-              alt=""
-              className="dots"
-            />
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h4>
-                <b>John Doe</b>
-              </h4>
-              <p>Architect &amp; Engineer</p>
-            </div>
-          </div>
-          <div className="card">
-            <img
-              src="https://i.stack.imgur.com/k59em.png"
-              alt=""
-              className="dots"
-            />
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h4>
-                <b>John Doe</b>
-              </h4>
-              <p>Architect &amp; Engineer</p>
-            </div>
-          </div>
-          <div className="card">
-            <img
-              src="https://i.stack.imgur.com/k59em.png"
-              alt=""
-              className="dots"
-            />
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h4>
-                <b>John Doe</b>
-              </h4>
-              <p>Architect &amp; Engineer</p>
-            </div>
-          </div>
-          <div className="card">
-            <img
-              src="https://i.stack.imgur.com/k59em.png"
-              alt=""
-              className="dots"
-            />
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h4>
-                <b>John Doe</b>
-              </h4>
-              <p>Architect &amp; Engineer</p>
-            </div>
-          </div>
-          <div className="card">
-            <img
-              src="https://i.stack.imgur.com/k59em.png"
-              alt=""
-              className="dots"
-            />
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h4>
-                <b>John Doe</b>
-              </h4>
-              <p>Architect &amp; Engineer</p>
-            </div>
-          </div>
-          <div className="card">
-            <img
-              src="https://i.stack.imgur.com/k59em.png"
-              alt=""
-              className="dots"
-            />
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h4>
-                <b>John Doe</b>
-              </h4>
-              <p>Architect &amp; Engineer</p>
-            </div>
-          </div>
-          <div className="card">
-            <img
-              src="https://i.stack.imgur.com/k59em.png"
-              alt=""
-              className="dots"
-            />
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h4>
-                <b>John Doe</b>
-              </h4>
-              <p>Architect &amp; Engineer</p>
-            </div>
-          </div>
-          <div className="card">
-            <img
-              src="https://i.stack.imgur.com/k59em.png"
-              alt=""
-              className="dots"
-            />
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h4>
-                <b>John Doe</b>
-              </h4>
-              <p>Architect &amp; Engineer</p>
-            </div>
-          </div>
-          <div className="card">
-            <img
-              src="https://i.stack.imgur.com/k59em.png"
-              alt=""
-              className="dots"
-            />
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h4>
-                <b>John Doe</b>
-              </h4>
-              <p>Architect &amp; Engineer</p>
-            </div>
-          </div>
-          <div className="card">
-            <img
-              src="https://i.stack.imgur.com/k59em.png"
-              alt=""
-              className="dots"
-            />
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <div className="container">
-              <h4>
-                <b>John Doe</b>
-              </h4>
-              <p>Architect &amp; Engineer</p>
-            </div>
-          </div>
+        <main className="wrap_list" id="wrap_list">
+          {this.state.listEntries.map((item) => {
+            return (
+              <EntryItem
+                key={item.id}
+                avatar={item.avatar}
+                handleClick={() => this.handleClick(item)}
+              />
+            );
+          })}
         </main>
       </>
     );
