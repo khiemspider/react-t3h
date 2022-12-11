@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Header.css";
 
+
 export default class Header extends Component {
   render() {
     return (
@@ -16,7 +17,9 @@ export default class Header extends Component {
 
         <div className="head_container">
           <h2>List Entries</h2>
-          <button className="btn-new-entries" id="myBtn">
+          <button className="btn-new-entries" id="myBtn"
+          
+          >
             Create new Entry +
           </button>
         </div>

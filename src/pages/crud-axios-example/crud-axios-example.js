@@ -38,11 +38,34 @@ export default class CrudAxiosExample extends Component {
         },
       ],
       isShowModal: false,
+      avatar: ""
     };
   }
+handleShowModal=()=>{
+ this.setState((prevState)=>({
+  ...prevState,
+  isShowModal:true,
+ }))
+}
+handleHideModel=()=>{
+  this.setState((prevState)=>({
+    ...prevState,
+    isShowModal: false,
+  }))
+}
 
   handleClick = (item) => {
-    console.log("item", item);
+   
+    this.setState((prevState) =>({
+      ...prevState,
+     
+
+      listEntries: this.state.listEntries.filter((it)=>{
+          if(it.id !==item.id){
+            return it;
+          }
+      })
+    }))
   };
   render() {
     return (
@@ -59,7 +82,7 @@ export default class CrudAxiosExample extends Component {
             );
           })}
         </main>
-        {this.state.isShowModal && <EntryModal />}
+        {this.state.isShowModal && <EntryModal  handleShowModal={this.handleShowModal} avatar={this.avatar} />}
       </>
     );
   }
