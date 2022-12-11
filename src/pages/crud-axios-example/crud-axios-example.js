@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../../components/CrudAxoisExample/Header/Header";
 import "./CrudAxiosExample.css";
 import EntryItem from "../../components/CrudAxoisExample/EntryItem/EntryItem";
+import EntryModal from "../../components/EntryModal/EntryModal";
 
 export default class CrudAxiosExample extends Component {
   constructor(props) {
@@ -36,6 +37,7 @@ export default class CrudAxiosExample extends Component {
           avatar: "https://www.w3schools.com/howto/img_avatar.png",
         },
       ],
+      isShowModal: false,
     };
   }
 
@@ -57,6 +59,7 @@ export default class CrudAxiosExample extends Component {
             );
           })}
         </main>
+        {this.state.isShowModal && <EntryModal />}
       </>
     );
   }
