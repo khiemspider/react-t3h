@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import "./Header.css";
 
 export default class Header extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <header className="header">
@@ -16,7 +20,11 @@ export default class Header extends Component {
 
         <div className="head_container">
           <h2>List Entries</h2>
-          <button className="btn-new-entries" id="myBtn">
+          <button
+            className="btn-new-entries"
+            id="myBtn"
+            onClick={this.props.handleShowModal}
+          >
             Create new Entry +
           </button>
         </div>

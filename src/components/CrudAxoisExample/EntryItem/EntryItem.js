@@ -7,8 +7,9 @@ export default class EntryItem extends React.Component {
   }
   render() {
     return (
-      <div className="card" onClick={this.props.handleClick}>
+      <div className="card">
         <img
+          onClick={this.props.handleClick}
           src="https://i.stack.imgur.com/k59em.png"
           alt=""
           className="dots"

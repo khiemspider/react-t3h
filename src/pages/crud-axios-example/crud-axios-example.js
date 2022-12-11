@@ -38,16 +38,61 @@ export default class CrudAxiosExample extends Component {
         },
       ],
       isShowModal: false,
+      avatar: "",
     };
   }
 
+  handleShowModal = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      isShowModal: true,
+    }));
+  };
+
+  handleHideModal = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      isShowModal: false,
+    }));
+  };
+
   handleClick = (item) => {
     console.log("item", item);
+    this.setState((prevState) => ({
+      ...prevState,
+      listEntries: this.state.listEntries.filter((it) => {
+        if (it.id !== item.id) {
+          return it;
+        }
+      }),
+    }));
   };
+
+  handleChangeAvatar = (event) => {
+    this.setState((prevState) => ({
+      ...prevState,
+      avatar: event.target.value,
+    }));
+  };
+
+  handleSubmitEntry = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      listEntries: [
+        ...prevState.listEntries,
+        {
+          id: 10,
+          avatar: prevState.avatar,
+        },
+      ],
+      avatar: "",
+    }));
+  };
+
   render() {
     return (
       <>
-        <Header />
+        <Header handleShowModal={this.handleShowModal} />
         <main className="wrap_list" id="wrap_list">
           {this.state.listEntries.map((item) => {
             return (
@@ -59,7 +104,14 @@ export default class CrudAxiosExample extends Component {
             );
           })}
         </main>
-        {this.state.isShowModal && <EntryModal />}
+        {this.state.isShowModal && (
+          <EntryModal
+            handleHideModal={this.handleHideModal}
+            avatar={this.state.avatar}
+            handleChangeAvatar={this.handleChangeAvatar}
+            handleSubmitEntry={this.handleSubmitEntry}
+          />
+        )}
       </>
     );
   }
