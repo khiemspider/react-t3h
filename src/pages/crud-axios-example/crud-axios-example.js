@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Header from "../components/CrudAxoisExample/Header/Header";
+import Header from "../../components/CrudAxoisExample/Header/Header";
 import "./CrudAxiosExample.css";
-import EntryItem from "../components/CrudAxoisExample/EntryItem/EntryItem";
+import EntryItem from "../../components/CrudAxoisExample/EntryItem/EntryItem";
 
 export default class CrudAxiosExample extends Component {
   constructor(props) {
