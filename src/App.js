@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import CrudAxiosExample from "./pages/crud-axios-example/crud-axios-example";
 import Form from "./pages/form/Form";
 
 class App extends React.Component {
@@ -11,8 +12,8 @@ class App extends React.Component {
   render() {
     return (
       <>
-        {/* <CrudAxiosExample /> */}
-        <Form />
+        <CrudAxiosExample />
+        {/* <Form /> */}
       </>
     );
   }

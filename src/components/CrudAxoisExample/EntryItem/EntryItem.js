@@ -1,5 +1,4 @@
 import React from "react";
-import CrudAxiosExample from "../../../pages/crud-axios-example";
 import "./EntryItem.css";
 
 export default class EntryItem extends React.Component {
