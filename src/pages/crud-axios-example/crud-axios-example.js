@@ -38,7 +38,11 @@ export default class CrudAxiosExample extends Component {
         },
       ],
       isShowModal: false,
+<<<<<<< HEAD
       avatar: ""
+=======
+      avatar: "",
+>>>>>>> 27d1d45668bdb12dd501fd9c22cad093e6671b2d
     };
   }
 handleShowModal=()=>{
@@ -54,7 +58,22 @@ handleHideModel=()=>{
   }))
 }
 
+  handleShowModal = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      isShowModal: true,
+    }));
+  };
+
+  handleHideModal = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      isShowModal: false,
+    }));
+  };
+
   handleClick = (item) => {
+<<<<<<< HEAD
    
     this.setState((prevState) =>({
       ...prevState,
@@ -66,11 +85,44 @@ handleHideModel=()=>{
           }
       })
     }))
+=======
+    console.log("item", item);
+    this.setState((prevState) => ({
+      ...prevState,
+      listEntries: this.state.listEntries.filter((it) => {
+        if (it.id !== item.id) {
+          return it;
+        }
+      }),
+    }));
+>>>>>>> 27d1d45668bdb12dd501fd9c22cad093e6671b2d
   };
+
+  handleChangeAvatar = (event) => {
+    this.setState((prevState) => ({
+      ...prevState,
+      avatar: event.target.value,
+    }));
+  };
+
+  handleSubmitEntry = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      listEntries: [
+        ...prevState.listEntries,
+        {
+          id: 10,
+          avatar: prevState.avatar,
+        },
+      ],
+      avatar: "",
+    }));
+  };
+
   render() {
     return (
       <>
-        <Header />
+        <Header handleShowModal={this.handleShowModal} />
         <main className="wrap_list" id="wrap_list">
           {this.state.listEntries.map((item) => {
             return (
@@ -82,7 +134,18 @@ handleHideModel=()=>{
             );
           })}
         </main>
+<<<<<<< HEAD
         {this.state.isShowModal && <EntryModal  handleShowModal={this.handleShowModal} avatar={this.avatar} />}
+=======
+        {this.state.isShowModal && (
+          <EntryModal
+            handleHideModal={this.handleHideModal}
+            avatar={this.state.avatar}
+            handleChangeAvatar={this.handleChangeAvatar}
+            handleSubmitEntry={this.handleSubmitEntry}
+          />
+        )}
+>>>>>>> 27d1d45668bdb12dd501fd9c22cad093e6671b2d
       </>
     );
   }
